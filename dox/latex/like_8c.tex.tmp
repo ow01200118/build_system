@@ -1,0 +1,55 @@
+\hypertarget{like_8c}{}\section{like.\+c File Reference}
+\label{like_8c}\index{like.\+c@{like.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+Include dependency graph for like.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{like_8c_ad5a4726abae9dc891bd88ef5e2bcd33a}{lovecall} ()
+\item 
+char $\ast$ \hyperlink{like_8c_ac8ae0ca6c3f6371199bc98751dbe9219}{getname} ()
+\begin{DoxyCompactList}\small\item\em get name by stdin \end{DoxyCompactList}\item 
+int \hyperlink{like_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+main source file. \begin{DoxyAuthor}{Author}
+hansaemwi 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2019.\+04.\+21 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\index{like.\+c@{like.\+c}!getname@{getname}}
+\index{getname@{getname}!like.\+c@{like.\+c}}
+\subsubsection[{\texorpdfstring{getname()}{getname()}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ getname (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{like_8c_ac8ae0ca6c3f6371199bc98751dbe9219}{}\label{like_8c_ac8ae0ca6c3f6371199bc98751dbe9219}
+
+
+get name by stdin 
+
+\begin{DoxyReturn}{Returns}
+entered name 
+\end{DoxyReturn}
+\index{like.\+c@{like.\+c}!lovecall@{lovecall}}
+\index{lovecall@{lovecall}!like.\+c@{like.\+c}}
+\subsubsection[{\texorpdfstring{lovecall()}{lovecall()}}]{\setlength{\rightskip}{0pt plus 5cm}void lovecall (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{like_8c_ad5a4726abae9dc891bd88ef5e2bcd33a}{}\label{like_8c_ad5a4726abae9dc891bd88ef5e2bcd33a}
+\index{like.\+c@{like.\+c}!main@{main}}
+\index{main@{main}!like.\+c@{like.\+c}}
+\subsubsection[{\texorpdfstring{main(void)}{main(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{like_8c_a840291bc02cba5474a4cb46a9b9566fe}{}\label{like_8c_a840291bc02cba5474a4cb46a9b9566fe}
