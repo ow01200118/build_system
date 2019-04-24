@@ -1,0 +1,63 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=2445, cgraph_uid=23, symbol_order=23)
+
+main ()
+{
+  int k;
+  int j;
+  int i;
+  int D.2457;
+
+  <bb 2> [0.00%]:
+  j = 0;
+  k = 0;
+  i = 0;
+  goto <bb 7>; [0.00%]
+
+  <bb 3> [0.00%]:
+  i.0_1 = (unsigned int) i;
+  _2 = i.0_1 & 1;
+  if (_2 != 0)
+    goto <bb 4>; [0.00%]
+  else
+    goto <bb 5>; [0.00%]
+
+  <bb 4> [0.00%]:
+  j = j + 1;
+  goto <bb 6>; [0.00%]
+
+  <bb 5> [0.00%]:
+  k = k + 1;
+
+  <bb 6> [0.00%]:
+  printf ("j=%d, k=%d \n", j, k);
+  i = i + 1;
+
+  <bb 7> [0.00%]:
+  if (i <= 9)
+    goto <bb 3>; [0.00%]
+  else
+    goto <bb 8>; [0.00%]
+
+  <bb 8> [0.00%]:
+  D.2457 = 0;
+  return D.2457;
+
+}
+
+
+
+;; Function printf (<unset-asm-name>, funcdef_no=15, decl_uid=798, cgraph_uid=15, symbol_order=15)
+
+__attribute__((__artificial__, __gnu_inline__, __always_inline__))
+printf (const char * restrict __fmt)
+{
+  int D.2459;
+
+  <bb 2> [0.00%]:
+  D.2459 = __printf_chk (1, __fmt, __builtin_va_arg_pack ());
+  return D.2459;
+
+}
+
+

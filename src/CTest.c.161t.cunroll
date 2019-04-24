@@ -1,0 +1,55 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=2445, cgraph_uid=23, symbol_order=23) (executed once)
+
+Not peeling: upper bound is known so can unroll completely
+main ()
+{
+  int k;
+  int j;
+  int i;
+  unsigned int i.0_1;
+  unsigned int _2;
+  unsigned int ivtmp_7;
+  unsigned int ivtmp_20;
+
+  <bb 2> [9.09%]:
+
+  <bb 3> [90.91%]:
+  # i_22 = PHI <i_12(7), 0(2)>
+  # j_23 = PHI <j_4(7), 0(2)>
+  # k_24 = PHI <k_6(7), 0(2)>
+  # ivtmp_7 = PHI <ivtmp_20(7), 10(2)>
+  i.0_1 = (unsigned int) i_22;
+  _2 = i.0_1 & 1;
+  if (_2 != 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 4> [45.46%]:
+  j_11 = j_23 + 1;
+  goto <bb 6>; [100.00%]
+
+  <bb 5> [45.46%]:
+  k_10 = k_24 + 1;
+
+  <bb 6> [90.91%]:
+  # j_4 = PHI <j_11(4), j_23(5)>
+  # k_6 = PHI <k_24(4), k_10(5)>
+  __printf_chk (1, "j=%d, k=%d \n", j_4, k_6);
+  i_12 = i_22 + 1;
+  ivtmp_20 = ivtmp_7 - 1;
+  if (ivtmp_20 != 0)
+    goto <bb 7>; [90.00%]
+  else
+    goto <bb 8>; [10.00%]
+
+  <bb 7> [81.82%]:
+  goto <bb 3>; [100.00%]
+
+  <bb 8> [9.09%]:
+  return 0;
+
+}
+
+

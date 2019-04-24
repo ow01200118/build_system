@@ -1,0 +1,21 @@
+26 ssa "unused VAR_DECLs removed" "main" 1
+38 ccp "Constants propagated" "main" 4
+38 ccp "Statements deleted" "main" 5
+43 fre "SCC iterations == 3" "main" 4
+55 release_ssa "unused VAR_DECLs removed" "main" 1
+55 release_ssa "SSA names released" "main" 7
+55 release_ssa "SSA name holes removed" "main" 7
+106 fre "SCC iterations == 3" "main" 4
+109 vrp "Incremental SSA update" "main" 1
+109 vrp "Statements folded" "main" 1
+109 vrp "Jumps threaded" "main" 1
+109 vrp "Number of ASSERT_EXPR expressions inserted" "main" 4
+111 dce "PHI nodes deleted" "main" 2
+139 pre "compute_antic iterations == 2" "main" 1
+139 pre "Insertions" "main" 3
+139 pre "SCC iterations == 3" "main" 4
+139 pre "insert iterations == 2" "main" 1
+184 dom "Copies propagated" "main" 4
+187 vrp "Incremental SSA update" "main" 1
+187 vrp "Number of ASSERT_EXPR expressions inserted" "main" 5
+266 combine "two-insn combine" "main" 1

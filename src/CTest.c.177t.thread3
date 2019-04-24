@@ -1,0 +1,83 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=2445, cgraph_uid=23, symbol_order=23) (executed once)
+
+Disambiguating loop 1 with multiple latches
+Merged latch edges of loop 1
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 9 4 5 6 7 8
+;;
+;; Loop 1
+;;  header 9, latch 3
+;;  depth 1, outer 0
+;;  nodes: 9 3 5 7 6 4
+;; 2 succs { 9 }
+;; 3 succs { 9 }
+;; 9 succs { 4 6 }
+;; 4 succs { 5 }
+;; 5 succs { 3 8 }
+;; 6 succs { 7 }
+;; 7 succs { 3 8 }
+;; 8 succs { 1 }
+main ()
+{
+  int k;
+  int j;
+  int i;
+  unsigned int i.0_1;
+  unsigned int _2;
+
+  <bb 2> [9.09%]:
+  goto <bb 9>; [100.00%]
+
+  <bb 3> [81.82%]:
+  # i_18 = PHI <i_3(5), i_12(7)>
+  # j_21 = PHI <j_7(5), j_4(7)>
+  # k_8 = PHI <k_20(5), k_6(7)>
+
+  <bb 9> [90.91%]:
+  # i_22 = PHI <i_18(3), 0(2)>
+  # j_23 = PHI <j_21(3), 0(2)>
+  # k_24 = PHI <k_8(3), 0(2)>
+  i.0_1 = (unsigned int) i_22;
+  _2 = i.0_1 & 1;
+  if (_2 != 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 6>; [50.00%]
+
+  <bb 4> [45.46%]:
+  j_11 = j_23 + 1;
+
+  <bb 5> [45.46%]:
+  # j_7 = PHI <j_11(4)>
+  # k_20 = PHI <k_24(4)>
+  __printf_chk (1, "j=%d, k=%d \n", j_7, k_20);
+  i_3 = i_22 + 1;
+  if (i_3 != 10)
+    goto <bb 3>; [90.00%]
+  else
+    goto <bb 8>; [10.00%]
+
+  <bb 6> [45.46%]:
+  k_10 = k_24 + 1;
+
+  <bb 7> [45.45%]:
+  # j_4 = PHI <j_23(6)>
+  # k_6 = PHI <k_10(6)>
+  __printf_chk (1, "j=%d, k=%d \n", j_4, k_6);
+  i_12 = i_22 + 1;
+  if (i_12 != 10)
+    goto <bb 3>; [90.00%]
+  else
+    goto <bb 8>; [10.00%]
+
+  <bb 8> [9.09%]:
+  return 0;
+
+}
+
+

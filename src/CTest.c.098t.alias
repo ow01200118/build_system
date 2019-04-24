@@ -1,0 +1,125 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=2445, cgraph_uid=23, symbol_order=23) (executed once)
+
+Points-to analysis
+
+Constraints:
+
+ANYTHING = &ANYTHING
+ESCAPED = *ESCAPED
+ESCAPED = ESCAPED + UNKNOWN
+*ESCAPED = NONLOCAL
+NONLOCAL = &NONLOCAL
+NONLOCAL = &ESCAPED
+INTEGER = &ANYTHING
+i.0_1 = i_3
+_2 = i.0_1 + UNKNOWN
+j_11 = j_5
+j_11 = &NONLOCAL
+k_10 = k_7
+k_10 = &NONLOCAL
+j_4 = j_11
+j_4 = j_5
+k_6 = k_7
+k_6 = k_10
+ESCAPED = &NONLOCAL
+ESCAPED = &STRING
+ESCAPED = j_4
+ESCAPED = k_6
+i_12 = i_3
+i_12 = &NONLOCAL
+i_3 = &NULL
+i_3 = i_12
+j_5 = &NULL
+j_5 = j_4
+k_7 = &NULL
+k_7 = k_6
+ESCAPED = &NULL
+
+Collapsing static cycles and doing variable substitution
+Building predecessor graph
+Detecting pointer and location equivalences
+Rewriting constraints and unifying variables
+Uniting pointer but not location equivalent variables
+Finding indirect cycles
+Solving graph
+
+Points-to sets
+
+ANYTHING = { ANYTHING }
+ESCAPED = { NULL STRING ESCAPED NONLOCAL }
+NONLOCAL = { ESCAPED NONLOCAL }
+STOREDANYTHING = { }
+INTEGER = { ANYTHING }
+i.0_1 = { NULL NONLOCAL }
+i_3 = { NULL NONLOCAL } same as i.0_1
+_2 = { NULL NONLOCAL }
+j_11 = { NULL NONLOCAL } same as i.0_1
+j_5 = { NULL NONLOCAL } same as i.0_1
+k_10 = { NULL NONLOCAL } same as i.0_1
+k_7 = { NULL NONLOCAL } same as i.0_1
+j_4 = { NULL NONLOCAL } same as i.0_1
+k_6 = { NULL NONLOCAL } same as i.0_1
+__printf_chk = { }
+i_12 = { NULL NONLOCAL } same as i.0_1
+
+
+Alias information for main
+
+Aliased symbols
+
+
+Call clobber information
+
+ESCAPED, points-to non-local, points-to NULL, points-to vars: { }
+
+Flow-insensitive points-to information
+
+
+main ()
+{
+  int k;
+  int j;
+  int i;
+  unsigned int i.0_1;
+  unsigned int _2;
+
+  <bb 2> [9.09%]:
+  goto <bb 7>; [100.00%]
+
+  <bb 3> [90.91%]:
+  i.0_1 = (unsigned int) i_3;
+  _2 = i.0_1 & 1;
+  if (_2 != 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 4> [45.46%]:
+  j_11 = j_5 + 1;
+  goto <bb 6>; [100.00%]
+
+  <bb 5> [45.46%]:
+  k_10 = k_7 + 1;
+
+  <bb 6> [90.91%]:
+  # j_4 = PHI <j_11(4), j_5(5)>
+  # k_6 = PHI <k_7(4), k_10(5)>
+  __printf_chk (1, "j=%d, k=%d \n", j_4, k_6);
+  i_12 = i_3 + 1;
+
+  <bb 7> [100.00%]:
+  # i_3 = PHI <0(2), i_12(6)>
+  # j_5 = PHI <0(2), j_4(6)>
+  # k_7 = PHI <0(2), k_6(6)>
+  if (i_3 <= 9)
+    goto <bb 3>; [90.91%]
+  else
+    goto <bb 8>; [9.09%]
+
+  <bb 8> [9.09%]:
+  return 0;
+
+}
+
+

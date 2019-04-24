@@ -1,0 +1,133 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=2445, cgraph_uid=23, symbol_order=23) (executed once)
+
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8
+;;
+;; Loop 1
+;;  header 7, latch 6
+;;  depth 1, outer 0
+;;  nodes: 7 6 4 5 3
+;; 2 succs { 7 }
+;; 3 succs { 4 5 }
+;; 4 succs { 6 }
+;; 5 succs { 6 }
+;; 6 succs { 7 }
+;; 7 succs { 3 8 }
+;; 8 succs { 1 }
+Adding assert for i_3 from (unsigned int) i_3 + 4294967295
+Adding assert for i_3 from (unsigned int) i_3
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+i_14 -> { i_3 }
+i_15 -> { i_3 }
+i_16 -> { i_3 }
+i_17 -> { i_3 }
+Incremental SSA update started at block: 7
+Number of blocks in CFG: 9
+Number of blocks to update: 5 ( 56%)
+
+
+
+Value ranges after VRP:
+
+i.0_1: [0, 9]
+_2: [0, 1]
+i_3: [0, 10]
+j_4: [0, +INF(OVF)]
+j_5: [0, +INF(OVF)]
+k_6: [0, +INF(OVF)]
+k_7: [0, +INF(OVF)]
+.MEM_8: VARYING
+k_10: [1, +INF(OVF)]
+j_11: [1, +INF(OVF)]
+i_12: [1, 10]
+i_14: [0, 9]  EQUIVALENCES: { i_3 } (1 elements)
+i_15: [1, 9]  EQUIVALENCES: { i_3 i_14 } (2 elements)
+i_16: [1, 9]  EQUIVALENCES: { i_3 i_14 i_15 } (3 elements)
+i_17: [0, 9]  EQUIVALENCES: { i_3 i_14 } (2 elements)
+
+
+Simplified relational if (i_3 <= 9)
+ into if (i_3 != 10)
+
+Removing basic block 3
+
+SSA replacement table
+N_i -> { O_1 ... O_j } means that N_i replaces O_1, ..., O_j
+
+i_18 -> { i_3 }
+j_19 -> { j_5 }
+k_20 -> { k_7 }
+.MEM_21 -> { .MEM_8 }
+i_22 -> { i_3 }
+j_23 -> { j_5 }
+k_24 -> { k_7 }
+.MEM_25 -> { .MEM_8 }
+Incremental SSA update started at block: 9
+Number of blocks in CFG: 10
+Number of blocks to update: 7 ( 70%)
+
+
+main ()
+{
+  int k;
+  int j;
+  int i;
+  unsigned int i.0_1;
+  unsigned int _2;
+
+  <bb 2> [9.09%]:
+  goto <bb 9>; [100.00%]
+
+  <bb 3> [90.91%]:
+  # i_22 = PHI <i_3(7), i_18(9)>
+  # j_23 = PHI <j_5(7), j_19(9)>
+  # k_24 = PHI <k_7(7), k_20(9)>
+  i.0_1 = (unsigned int) i_22;
+  _2 = i.0_1 & 1;
+  if (_2 != 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 4> [45.46%]:
+  j_11 = j_23 + 1;
+  goto <bb 6>; [100.00%]
+
+  <bb 5> [45.46%]:
+  k_10 = k_24 + 1;
+
+  <bb 6> [90.91%]:
+  # j_4 = PHI <j_11(4), j_23(5)>
+  # k_6 = PHI <k_24(4), k_10(5)>
+  __printf_chk (1, "j=%d, k=%d \n", j_4, k_6);
+  i_12 = i_22 + 1;
+
+  <bb 7> [90.91%]:
+  # i_3 = PHI <i_12(6)>
+  # j_5 = PHI <j_4(6)>
+  # k_7 = PHI <k_6(6)>
+  if (i_3 != 10)
+    goto <bb 3>; [90.00%]
+  else
+    goto <bb 8>; [10.00%]
+
+  <bb 8> [9.09%]:
+  return 0;
+
+  <bb 9> [9.09%]:
+  # i_18 = PHI <0(2)>
+  # j_19 = PHI <0(2)>
+  # k_20 = PHI <0(2)>
+  goto <bb 3>; [100.00%]
+
+}
+
+

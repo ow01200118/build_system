@@ -1,0 +1,68 @@
+
+;; Function main (main, funcdef_no=23, decl_uid=2445, cgraph_uid=23, symbol_order=23) (executed once)
+
+;; 2 loops found
+;;
+;; Loop 0
+;;  header 0, latch 1
+;;  depth 0, outer -1
+;;  nodes: 0 1 2 3 4 5 6 7 8
+;;
+;; Loop 1
+;;  header 7, latch 6
+;;  depth 1, outer 0
+;;  nodes: 7 6 4 5 3
+;; 2 succs { 7 }
+;; 3 succs { 4 5 }
+;; 4 succs { 6 }
+;; 5 succs { 6 }
+;; 6 succs { 7 }
+;; 7 succs { 3 8 }
+;; 8 succs { 1 }
+main ()
+{
+  int k;
+  int j;
+  int i;
+  unsigned int i.0_1;
+  unsigned int _2;
+
+  <bb 2> [9.09%]:
+  goto <bb 7>; [100.00%]
+
+  <bb 3> [90.91%]:
+  i.0_1 = (unsigned int) i_3;
+  _2 = i.0_1 & 1;
+  if (_2 != 0)
+    goto <bb 4>; [50.00%]
+  else
+    goto <bb 5>; [50.00%]
+
+  <bb 4> [45.46%]:
+  j_11 = j_5 + 1;
+  goto <bb 6>; [100.00%]
+
+  <bb 5> [45.46%]:
+  k_10 = k_7 + 1;
+
+  <bb 6> [90.91%]:
+  # j_4 = PHI <j_11(4), j_5(5)>
+  # k_6 = PHI <k_7(4), k_10(5)>
+  __printf_chk (1, "j=%d, k=%d \n", j_4, k_6);
+  i_12 = i_3 + 1;
+
+  <bb 7> [100.00%]:
+  # i_3 = PHI <0(2), i_12(6)>
+  # j_5 = PHI <0(2), j_4(6)>
+  # k_7 = PHI <0(2), k_6(6)>
+  if (i_3 <= 9)
+    goto <bb 3>; [90.91%]
+  else
+    goto <bb 8>; [9.09%]
+
+  <bb 8> [9.09%]:
+  return 0;
+
+}
+
+
